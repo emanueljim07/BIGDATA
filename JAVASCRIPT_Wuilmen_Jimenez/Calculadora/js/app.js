@@ -1,6 +1,5 @@
 
-/*------------------- Ejercicio Lección 2 ----------------------------------------*/
-
+/*---------------------------------CAMBIAR COLOR TECLAS-----------------------------------*/
 function cambiarColorBotonesAccion(elemento){
   elemento.style.background = "#4d62d0";
   if (elemento.children[0]) {
@@ -14,117 +13,256 @@ function retornarColorBotonesAccion(elemento){
     elemento.children[0].style.background = "inherit";
   }
 }
-
-
-function mostrarContenido(elemento){
-  alert("hola");
-  for (var i = 0; i < document.querySelectorAll("[class^='item-']").length; i++) {
-    document.querySelectorAll("[class^='item-']")[i].style.width = "4%";
-    document.querySelectorAll("[class^='item-']")[i].style.background = "#4d62d0";
-  }
-  for (var i = 0; i < document.querySelectorAll("[class^='item-'] *").length; i++) {
-    document.querySelectorAll("[class^='item-'] *")[i].style.display = "none";
-  }
-  elemento.style.width = "96%";
-  elemento.style.background = "#fff";
-  for (var i = 0; i < elemento.children.length; i++) {
-    elemento.children[i].style.display = "block";
-  }
-}
-/*
-function reducirTamañoBotonAccion(elemento){
-  elemento.style.width = "18%";
-}
-function aumentarTamañoBotonAccion(elemento){
-  elemento.style.width = "20%";
-}*/
-/*
-function reducirTamañoLetra(){
-  document.querySelectorAll("[class^='item-'] h1")[0].style.fontSize = "small";
-  document.querySelectorAll("[class^='item-'] h1")[1].style.fontSize = "small";
-  document.querySelectorAll("[class^='item-'] h1")[2].style.fontSize = "small";
-}*/
-/*
-function aumentarTamañoLetra{
-alert("hola");
-  document.querySelectorAll("[class^='item-'] h1")[0].style.fontSize = "xx-large";
-  document.querySelectorAll("[class^='item-'] h1")[1].style.fontSize = "xx-large";
-  document.querySelectorAll("[class^='item-'] h1")[2].style.fontSize = "xx-large";
-}*/
-
-function displayNumber(number){
-//alert('hola');
-  /*document.querySelectorAll("[class^='item-'] h1")[0].style.fontSize = "xx-large";
-  document.querySelectorAll("[class^='item-'] h1")[1].style.fontSize = "xx-large";
-  document.querySelectorAll("[class^='item-'] h1")[2].style.fontSize = "xx-large";
-*/
-//alert('hola'+number);
-  document.getElementById('display').innerHTML =number; 
-}
-
-/*-------------------------------------------------------------------------------*/
-
-
-
-/*------------------- Ejercicio Lección 3 ----------------------------------------*/
-function activarVolumen(){
-  document.getElementById('speaker-radio').checked = false;
-  document.querySelector('.audio img').setAttribute("src", "img/speaker.png");
-}
-
-function desactivarVolumen(){
-  document.getElementById('speaker-radio').checked = true;
-  document.querySelector('.audio img').setAttribute("src", "img/mute.png");
-}
-
-function saludoInicial(){
-  var nombreUsuario = document.getElementsByName('nombre')[0].value;
-  var nuevoSaludo = document.createElement('H2');
-  var contenidoSaludo = document.createTextNode("Bienvenido "+nombreUsuario);
-  nuevoSaludo.appendChild(contenidoSaludo);
-  document.getElementsByClassName('container-saludo')[0].appendChild(nuevoSaludo);
-}
-
-function addContenido(element){
-  var nuevoTexto = document.createElement('P');
-  var contenidoTexto = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
-  nuevoTexto.appendChild(contenidoTexto);
-  element.appendChild(nuevoTexto);
-}
-
-function modificarTitulo(element, texto){
-  element.innerHTML=texto;
-}
-
-
-/*-------------------------------------------------------------------------------*/
-
-
-
-/*------------------- Ejercicio Lección 4 ----------------------------------------*/
-
-var Eventos = {
-  init: function(){
-  
-   
-   //alert("dasdas");
-    document.getElementById('display').innerHTML ='9'; 
-    document.onkeypress = this.eventoSonido;
-    this.asignarEventosBotones('tecla');
-    //this.asignarEventosBotones('boton-next');
-    this.asignarEventoMostrar();
-       document.getElementById('1').onclick = displayNumber ("1");
-	   document.getElementById('2').onclick = displayNumber ('2');
-	   document.getElementById('3').onclick = displayNumber ('3');
-	   document.getElementById('4').onclick = displayNumber ('4');
-	   document.getElementById('5').onclick = displayNumber ('5');
-	   document.getElementById('6').onclick = displayNumber ('6');
-	   document.getElementById('7').onclick =displayNumber ('7');
-	   document.getElementById('8').onclick = displayNumber ('8');
-	   document.getElementById('9').onclick = displayNumber ('9');
-	   //document.getElementById('0').onclick = displayNumber ('0');
+/*-----------------------------FUNCIONES DE CALCULADORA--------------------------------------------------*/
+var x="0"; //número en pantalla
+var xi=1; //iniciar número en pantalla: 1=si; 0=no;
+var coma=0; //estado coma decimal 0=no, 1=si;
+var ni=0; //número oculto o en espera.
+var opera=0; //operación en curso; "no" =  sin operación.
+var num1=0; //operación en curso; "no" =  sin operación.
+var num2=0; 
+var aux=0; 
+var dijitos='';	
+function capturaTecla(elemento){
+    
+   valor=devuelveSignoPunto(elemento.id);
+   if(valor=='on')
+   {
+   encerarC();
+   }else{ if(valor=="mas"){
+       
+       num1 = parseFloat(document.getElementById("display").innerText);
+	   document.getElementById('display').innerHTML="";
+	   opera=1;
+	   x=0;
+	   xi=1;
+	   dijitos='';
 	   
-    //document.getElementById('decrease-font').onclick = reducirTamañoLetra;
+   }
+    else{ if(valor=="menos"){
+       
+       num1 = parseFloat(document.getElementById("display").innerText);
+	   document.getElementById('display').innerHTML="";
+	   opera=2;
+	   x=0;
+	   xi=1;
+	   dijitos='';
+	   
+   }
+    else{  if(valor=="por"){
+       
+       num1 = parseFloat(document.getElementById("display").innerText);
+	   
+	   document.getElementById('display').innerHTML="";
+	   opera=3;
+	   x=0;
+	   xi=1;
+	   dijitos='';
+	   
+   }
+    else{  if(valor=="dividido"){
+       
+       num1 = parseFloat(document.getElementById("display").innerText);
+	   document.getElementById('display').innerHTML="";
+	   opera=4;
+	   x=0;
+	   xi=1;
+	   dijitos='';
+	   
+   }
+    else{   if(valor=="potencia"){
+       
+       num1 = parseFloat(document.getElementById("display").innerText);
+	   document.getElementById('display').innerHTML="";
+	   opera=5;
+	   x=0;
+	   xi=1;
+	   dijitos='';
+	   
+   }
+    else{   if(valor=="raiz"){
+       
+       num1 = parseFloat(document.getElementById("display").innerText);
+	    opera=6;
+	   x=0;
+	   xi=1;
+	   obtenerResultado();
+	   
+   }
+    else{   if(valor=="sign"){
+       
+       num1 = parseFloat(document.getElementById("display").innerText);
+	   opera=3;
+	   num1*=-1;
+
+		 if(aux==0){
+	    aux=num1;
+		}
+	     refrescar();
+	   
+   }
+    else{    if(valor=="igual"){
+	
+       num2 = parseFloat(document.getElementById("display").innerText);
+	   	   x=0;
+	   xi=1;
+	     obtenerResultado();
+		 dijitos='';
+	   
+   }
+    else{
+   numero(valor);
+   }
+   }
+   }
+   }
+   }
+   }
+   }
+   }
+   }
+  
+}
+
+function devuelveSignoPunto(signoParametro)
+{
+
+    var signo='';
+	  if(signoParametro=='punto')
+	  {
+	   signo='.';
+	   }else{
+	   signo=signoParametro;
+	   }
+   return signo;
+}
+
+//mostrar número en pantalla según se va escribiendo:
+function numero(xx) { //recoge el número pulsado en el argumento.
+     	
+
+         if (x=="0" || xi==1  ) {  // inicializar un número, 
+		     if(xx=="."){
+			 comaInicial(xx);
+			 }
+			 else{
+            document.getElementById('display').innerHTML=xx; //mostrar en pantalla
+            x=xx; //guardar número;
+			}
+            }
+         else { //continuar un número
+		     if(xx=="."){
+			 controlarComas(xx);
+			 }
+			 else{
+			  dijitos=dijitos+xx.toString();
+			
+			   if(dijitos.length<=7)
+				   {
+			  document.getElementById('display').innerHTML+=xx; //añadimos y mostramos en pantalla.
+			  }
+             
+            x+=xx; //añadimos y guardamos
+			}
+            }
+         xi=0 //el número está iniciado y podemos ampliarlo.
+         }
+
+//CONTROLAR QUE EXISTA UNA SOLA COMA
+function controlarComas(xx)
+{
+            if (xx=="." && coma==0) { //si escribimos una coma decimal pòr primera vez
+			         dijitos=dijitos+xx.toString();
+			
+			       if(dijitos.length<=7)
+				   {
+                   document.getElementById('display').innerHTML+=xx;
+				   }
+                   x+=xx;
+                   coma=1; //cambiar el estado de la coma  
+               }
+    
+
+}
+//CONTROLAR COMA INICIAL
+function comaInicial(xx)
+{
+            if (xx==".") { //si escribimos una coma al principio del número
+               document.getElementById('display').innerHTML="0."; //escribimos 0.
+               x=xx; //guardar número
+               coma=1; 
+			   }
+
+}
+
+//Función que encera  pantalla al presionar EL botón C
+        function encerarC(){
+		     	   x=0;
+	   xi=1;
+            num1 = 0;
+            num2 = 0;
+            refrescar();
+        }
+        function refrescar(){
+            document.getElementById('display').innerHTML = num1;
+        }
+
+        function obtenerResultado(){
+		  if(aux!=0){
+		  num1=aux;
+		  }
+		
+            num1 = parseFloat(num1);
+            switch (opera){
+                case 1:
+                    num1 += num2;
+                break;
+                case 2:
+                    num1 = num1 - num2;
+                break;
+                case 3:
+                    num1 *= num2;
+                break;
+                case 4:
+                    num1 = num1 / num2;
+                break;
+                case 5:
+                    num1 = Math.pow(num2, num1);
+                break;
+				case 6:
+                    num1 = Math.sqrt(num1);
+                break;
+            }
+			/*
+			var auxi = num1.toString();
+			
+			 if(auxi.length>8){
+			 num1 = auxi.substring(0, 8);
+			 }
+*/			
+			num1=truncarNumero(num1);
+			
+            refrescar();
+			
+            num2 = parseFloat(num1);
+             num1 = 0;
+			 aux=0;
+        }	
+function truncarNumero(num)
+{
+			var auxi = num.toString();
+			
+			 if(auxi.length>8){
+			 num = auxi.substring(0, 8);
+			 }
+	return num;		 
+}		
+/*----------------------PATRON MODULO-------------------------*/
+
+var Calculadora = {
+  init: function(){  
+    
+    this.asignarEventosBotones('tecla');     
    
   },
   asignarEventosBotones: function(selector){
@@ -132,6 +270,7 @@ var Eventos = {
     for (var i = 0; i < botonesPagina.length; i++) {
       botonesPagina[i].onmouseover = this.eventoColorBotones;
       botonesPagina[i].onmouseleave = this.eventoRetornarColorBotones;
+	  botonesPagina[i].onclick = this.eventoCapturaTecla;
     }
   },
   eventoColorBotones: function(event){
@@ -140,28 +279,9 @@ var Eventos = {
   eventoRetornarColorBotones: function(event){
     retornarColorBotonesAccion(event.target);
   },
-  eventoMostrarContenido: function(event){
-    mostrarContenido(event.target);
-  },
-  asignarEventoMostrar: function(){
-    var bloques = document.querySelectorAll("[id^='item-']");
-    for (var i = 0; i < bloques.length; i++) {
-      bloques[i].onclick = this.eventoMostrarContenido;
-      bloques[i].ondblclick = this.eventoAddTexto;
-    }
-  },
-  eventoSonido: function(event){
-    if (event.which==48) {
-      desactivarVolumen();
-    }else if (event.which==57) {
-      activarVolumen();
-    }
-  },
-
-  eventoAddTexto: function(event){
-    addContenido(event.target);
+    eventoCapturaTecla: function(event){
+    capturaTecla(event.target);
   }
-
 }
 
-Eventos.init();
+Calculadora.init();
