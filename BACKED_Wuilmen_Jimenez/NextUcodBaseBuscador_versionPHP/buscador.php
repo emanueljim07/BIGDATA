@@ -11,8 +11,13 @@ foreach ($products as $product) {
 		   //1.- Consultar todos los datos 
 		   if ($IdCiudad=='Seleccionar' and $IdTipo='Seleccionar')
 		   {
+		   echo "<table class='productos' border='2'>";
+		   echo "<tr>";
+		   echo "<td>";
            echo "<img src='img/home.jpg' width=100 />";
-		   echo 'Id : '.$product["Id"];
+		   echo "</td>";
+		   echo "<td align='left'>";
+		   echo "Id : ".$product["Id"];
 		   echo "<br>"; //* Esto es un salto de linea
 		   echo 'Direccion : '.$product["Direccion"];
 		   echo "<br>"; //* Esto es un salto de linea
@@ -20,12 +25,19 @@ foreach ($products as $product) {
            echo "<br>"; //* Esto es un salto de linea 		   
 		   echo 'Telefono : '.$product["Telefono"];
 		   echo "<br>"; //* Esto es un salto de linea
-		   echo 'Codigo_Postal : '.$product["Codigo_Postal"];
+		   echo 'Codigo Postal : '.$product["Codigo_Postal"];
            echo "<br>"; //* Esto es un salto de linea		   
 		   echo 'Tipo : '.$product["Tipo"];
            echo "<br>"; //* Esto es un salto de linea		   
            echo 'Precio : '.$product["Precio"];
            echo "<br>"; //* Esto es un salto de linea
+		   
+		   echo "</td>";
+		   echo "<td> &nbsp; </td>";
+		   echo "<td> &nbsp; </td>";
+		   echo "<td> &nbsp; </td>";
+		   echo "</tr>";
+		   echo "</table>";
 
 			echo " &nbsp; "; 	   
 			echo " <br>"; //* Esto es un salto de linea
@@ -43,7 +55,12 @@ foreach ($products as $product) {
 					
 				   if( $precio>=$RangeLower and  $precio<=$RangeUpper )
 				   {
-			          echo "<img src='img/home.jpg' width=100 />";
+		   echo "<table class='productos'>";
+		   echo "<tr>";
+		   echo "<td>";
+           echo "<img src='img/home.jpg' width=100 />";
+		   echo "</td>";
+		   echo "<td>";
 		   echo 'Id : '.$product["Id"];
 		   echo "<br>"; //* Esto es un salto de linea
 		   echo 'Direccion : '.$product["Direccion"];
@@ -52,12 +69,18 @@ foreach ($products as $product) {
            echo "<br>"; //* Esto es un salto de linea 		   
 		   echo 'Telefono : '.$product["Telefono"];
 		   echo "<br>"; //* Esto es un salto de linea
-		   echo 'Codigo_Postal : '.$product["Codigo_Postal"];
+		   echo 'Codigo Postal : '.$product["Codigo_Postal"];
            echo "<br>"; //* Esto es un salto de linea		   
 		   echo 'Tipo : '.$product["Tipo"];
            echo "<br>"; //* Esto es un salto de linea		   
            echo 'Precio : '.$product["Precio"];
            echo "<br>"; //* Esto es un salto de linea
+		   echo "</td>";
+		   echo "<td> &nbsp; </td>";
+		   echo "<td> &nbsp; </td>";
+		   echo "<td> &nbsp; </td>";
+		   echo "</tr>";
+		   echo "</table>"; 
 		   
 		   	echo " &nbsp; "; 	   
 			echo " <br>"; //* Esto es un salto de linea
@@ -77,7 +100,12 @@ foreach ($products as $product) {
 					
 				   if( $precio>=$RangeLower and  $precio<=$RangeUpper )
 				   {
+		   echo "<table class='productos'>";
+		   echo "<tr>";
+		   echo "<td>";
            echo "<img src='img/home.jpg' width=100 />";
+		   echo "</td>";
+		   echo "<td>";
 		   echo 'Id : '.$product["Id"];
 		   echo "<br>"; //* Esto es un salto de linea
 		   echo 'Direccion : '.$product["Direccion"];
@@ -86,12 +114,18 @@ foreach ($products as $product) {
            echo "<br>"; //* Esto es un salto de linea 		   
 		   echo 'Telefono : '.$product["Telefono"];
 		   echo "<br>"; //* Esto es un salto de linea
-		   echo 'Codigo_Postal : '.$product["Codigo_Postal"];
+		   echo 'Codigo Postal : '.$product["Codigo_Postal"];
            echo "<br>"; //* Esto es un salto de linea		   
 		   echo 'Tipo : '.$product["Tipo"];
            echo "<br>"; //* Esto es un salto de linea		   
            echo 'Precio : '.$product["Precio"];
            echo "<br>"; //* Esto es un salto de linea
+		   echo "</td>";
+		   		   echo "<td> &nbsp; </td>";
+		   echo "<td> &nbsp; </td>";
+		   echo "<td> &nbsp; </td>";
+		   echo "</tr>";
+		   echo "</table>";
 		   
 		   	echo " &nbsp; "; 	   
 			echo " <br>"; //* Esto es un salto de linea
