@@ -125,17 +125,29 @@ video#vidFondo {
   width: 100%;
 }
 .response-container{
-	/* border: 1px solid yellow;*/
+
   width: 100%;
   margin-top: 0.4rem;
   display: flex;
   flex-flow: row wrap;
 }
-.response-container img{
+/*
+.response-container productos img{
 	 border: 1px solid red;
-	/* margin: 25px;*/
-	height: 130px;
+	/* margin: 25px;
+	height: 147px;
   width: 45% !important;
+}*/
+img{
+	 border: 1px solid blue;
+	 height: 147px;
+  width: 200px !important;
+}
+
+.productos{
+  background: white;
+  color: black;
+  width: 100%;
 }
 .precioTexto{
   font-size: 1.3rem;
