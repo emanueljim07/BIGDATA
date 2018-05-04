@@ -1,0 +1,25 @@
+
+
+https://learn.jquery.com/using-jquery-core/faq/how-do-i-get-the-text-value-of-a-selected-option/
+
+https://stackoverflow.com/questions/35859955/how-should-i-pass-the-value-of-price-slider-to-the-controller-using-ajax
+You can pass the value to AJAX by getting values like
+
+data.to and data.from
+
+http://php.net/manual/es/function.number-format.php
+
+string number_format ( float $number , int $decimals = 0 , string $dec_point = "." , string $thousands_sep = "," )
+
+
+mixed str_replace ( mixed $search , mixed $replace , mixed $subject [, int &$count ] )
+
+
+http://jquerymodal.com/
+
+modal
+https://www.aspsnippets.com/Articles/Open-Show-jQuery-Dialog-Modal-Popup-after-AJAX-Call-Success.aspx
+https://www.codeproject.com/Questions/1202464/How-do-I-call-pop-up-div-on-ajax-success-function
+
+https://www.w3schools.com/howto/howto_css_modals.asp
+
