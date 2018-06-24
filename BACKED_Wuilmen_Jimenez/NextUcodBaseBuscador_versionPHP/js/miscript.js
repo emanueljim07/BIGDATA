@@ -21,7 +21,7 @@ $(document).ready(function(){
 		// When the user clicks on <span> (x), close the modal
 		span.onclick = function() {
 			modal.style.display = "none";
-		   document.getElementById("selectCiudad").style.color="black"; 	
+		   document.getElementById("selectCiudad").style.color="green"; 	
 		}
 
 		// When the user clicks anywhere outside of the modal, close it
@@ -91,7 +91,7 @@ $(document).ready(function(){
                             {
 								
                                 $('.filtroCiudad select').html(response).fadeIn();
-							 
+							 document.getElementById("selectCiudad").style.color="green"; 
                             }
                     });
 	
@@ -102,11 +102,7 @@ $(document).ready(function(){
                                 is_ajax: 1,
                                 ciudad: +$(".filtroCiudad select").val()
                         };
-						/*console.log('test: '+form_data);
-						
-						$.each(form_data, function(key,value) {
-    
-                    }); */
+
 
                         $.ajax({
                                 type: "POST",
@@ -114,6 +110,7 @@ $(document).ready(function(){
                                 data: form_data,
                                 success: function(response)
                                 {
+								    document.getElementById("selectTipo").style.color="green"; 
                                     $('.filtroTipo select').html(response).fadeIn();
                                 }
                         });
