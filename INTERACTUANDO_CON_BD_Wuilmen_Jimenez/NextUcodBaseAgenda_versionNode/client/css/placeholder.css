@@ -1,0 +1,13 @@
+/* all */
+::-webkit-input-placeholder { color:orange; opacity: 1;}
+::-moz-placeholder { color:orange; opacity: 1; } /* firefox 19+ */
+:-ms-input-placeholder { color:orange; opacity: 1;} /* ie */
+input:-moz-placeholder { color:orange; opacity: 1;}
+ 
+/* individual: webkit */
+#nombre::-webkit-input-placeholder { color: orange; opacity: 1;}
+#apellidos::-webkit-input-placeholder { color: green; text-transform:uppercase; opacity: 1;}
+ 
+/* individual: mozilla */
+#nombre::-moz-placeholder { color: orange; opacity: 1;}
+#apellidos::-moz-placeholder { color: green; text-transform:uppercase; opacity: 1;}

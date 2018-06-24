@@ -1,0 +1,7 @@
+1. Aplica las dependencias (npm install)
+
+2. Aplica la base de datos y el usuario (node crea_usuario.js) y 
+   se crea automáticamente el user:admin con pass:clave
+
+3. inicia la app con (node server.js) corriendo en el puerto 3000
+
