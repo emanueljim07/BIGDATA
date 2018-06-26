@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antonioriosm/nu-agenda-node.git"
+    "url": "git+https://github.com/emanueljim07/BIGDATA/tree/master/INTERACTUANDO_CON_BD_Wuilmen_Jimenez"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/antonioriosm/nu-agenda-node/issues"
+    "url": "https://github.com/emanueljim07/BIGDATA/tree/master/INTERACTUANDO_CON_BD_Wuilmen_Jimenez"
   },
-  "homepage": "https://github.com/antonioriosm/nu-agenda-node#readme",
+  "homepage": "https://github.com/emanueljim07/BIGDATA/tree/master/INTERACTUANDO_CON_BD_Wuilmen_Jimenez",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
