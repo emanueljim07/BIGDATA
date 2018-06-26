@@ -1,7 +1,0 @@
-css/fullcalendar.print.css
-
-https://www.webslesson.info/2017/12/jquery-fullcalandar-integration-with-php-and-mysql.html
-
-jquery.js:9203 GET http://localhost/NextUcodBaseAgenda_versionPHP/client/[%7Btitle:'event1',start:'2018-06-06'%7D]?start=2018-05-27&end=2018-07-08&_=1529266757420 403 (Forbidden)
-
-Failed to load resource: the server responded with a status of 403 (Forbidden)

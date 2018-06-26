@@ -4,11 +4,14 @@
           user='wjimenez'
           password='1abacola2'
 	 La cadena de conexión a la base de datos esta en el archivo /server/conector.php
-3.- Verificar que el servidor Apache y MySQL esten iniciados	 
-3.- Ejecutar en el browser el archivo create_user.php para crear tres usuarios por defecto
+3.- Crear tabla USER y EVENT mediante phpMyAdmin
+    Nota: la estructura de las tablas estan en archivo SCRIPT_TABLES.SQL
+
+4.- Verificar que el servidor Apache y MySQL esten iniciados	 
+5.- Ejecutar en el browser el archivo create_user.php para crear tres usuarios por defecto
 
   http://localhost/NextUcodBaseAgenda_versionPHP/server/create_user.php	 
   
-4.- Ingresar a la aplicación
+6.- Ingresar a la aplicación
                    usuario: jsangurima@hotmail.com
                    contraseña: admin
