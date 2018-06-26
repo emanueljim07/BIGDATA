@@ -1,0 +1,14 @@
+1.- Crear la Base de datos agenda_db mediante phpMyAdmin
+2.- Crear un usuario adminsitrador para la BD, el mismo que permitirá conectarse a la base de datos agenda_db
+          host='localhost'
+          user='wjimenez'
+          password='1abacola2'
+	 La cadena de conexión a la base de datos esta en el archivo /server/conector.php
+3.- Verificar que el servidor Apache y MySQL esten iniciados	 
+3.- Ejecutar en el browser el archivo create_user.php para crear tres usuarios por defecto
+
+  http://localhost/NextUcodBaseAgenda_versionPHP/server/create_user.php	 
+  
+4.- Ingresar a la aplicación
+                   usuario: jsangurima@hotmail.com
+                   contraseña: admin
